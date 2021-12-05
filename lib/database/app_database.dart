@@ -7,7 +7,7 @@ import 'package:sqflite/sqflite.dart';
 import 'dao/period_dao.dart';
 
 Future<Database> getDatabase() async {
-  final String path = join(await getDatabasesPath(), 'genshitomorrow.db');
+  final String path = join(await getDatabasesPath(), 'testeFour.db');
   return openDatabase(
     path,
     onCreate: (db, version) async {
@@ -17,8 +17,6 @@ Future<Database> getDatabase() async {
       await db.execute(TalentDao.insert);
       await db.execute(CharacterDao.tableSql);
       await db.execute(CharacterDao.insert);
-
-      //talent dao dando BO. Nao cria a tabela talents... nao sei pq
     },
     version: 7,
     //onDowngrade: onDatabaseDowngradeDelete,

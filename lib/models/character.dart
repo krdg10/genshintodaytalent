@@ -8,6 +8,7 @@ class Character {
   final Talent talent;
   final String type;
   final int stars;
+  final bool mine;
 
   Character(
       {required this.id,
@@ -16,7 +17,8 @@ class Character {
       this.description,
       this.photo,
       required this.type,
-      required this.stars});
+      required this.stars,
+      this.mine = false});
 
   Character.fromJson(Map<String, dynamic> json)
       : id = json['id'],
@@ -25,6 +27,7 @@ class Character {
         type = json['type'],
         photo = json['photo'],
         stars = json['stars'],
+        mine = json['mine'],
         talent = Talent.fromJson(json['talent']);
 
   Map<String, dynamic> toJson() => {
@@ -34,6 +37,7 @@ class Character {
         'type': type,
         'photo': photo,
         'stars': stars,
+        'mine': mine,
         'talent': talent.toJson(),
       };
 }
