@@ -1,0 +1,50 @@
+[
+    {
+        "id": 0,
+        "name": "Transience",
+        "description": "ablablue",
+        "periodGroup": 1,
+        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
+        "location": "ablabllue"
+    },
+    {
+        "id": 1,
+        "name": "Freedom",
+        "description": "ablablue",
+        "periodGroup": 1,
+        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
+        "location": "ablabllue"
+    },
+    {
+        "id": 2,
+        "name": "Resistance",
+        "description": "ablablue",
+        "periodGroup": 2,
+        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
+        "location": "ablabllue"
+    },
+    {
+        "id": 3,
+        "name": "Diligence",
+        "description": "ablablue",
+        "periodGroup": 2,
+        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
+        "location": "ablabllue"
+    },
+    {
+        "id": 4,
+        "name": "Gold",
+        "description": "ablablue",
+        "periodGroup": 3,
+        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
+        "location": "ablabllue"
+    },
+    {
+        "id": 5,
+        "name": "Light",
+        "description": "ablablue",
+        "periodGroup": 3,
+        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
+        "location": "ablabllue"
+    }
+]

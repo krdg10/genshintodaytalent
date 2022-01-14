@@ -52,7 +52,15 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - Diona.png
+    - Kokomi.png
+    - Eula.png
+    - Xiangling.png
+    - Xingqiu.png
+    - Shogun_Raiden.png
     - Logo.png
+    - characters.json
+    - talents.json
+
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

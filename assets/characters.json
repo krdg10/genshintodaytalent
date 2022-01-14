@@ -1,0 +1,62 @@
+[
+  {
+    "id": 0,
+    "name": "Kokomi",
+    "description": "ablablue",
+    "talentID": 1,
+    "photo": "images/Kokomi.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 1,
+    "name": "Diona",
+    "description": "ablablue",
+    "talentID": 2,
+    "photo": "images/Diona.png",
+    "type": "char",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 2,
+    "name": "Eula",
+    "description": "ablablue",
+    "talentID": 3,
+    "photo": "images/Eula.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 3,
+    "name": "Xiangling",
+    "description": "ablablue",
+    "talentID": 4,
+    "photo": "images/Xiangling.png",
+    "type": "char",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 4,
+    "name": "Xinqgiu",
+    "description": "ablablue",
+    "talentID": 5,
+    "photo": "images/Xingqiu.png",
+    "type": "char",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 5,
+    "name": "Shogun Raiden",
+    "description": "ablablue",
+    "talentID": 6,
+    "photo": "images/Shogun_Raiden.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  }
+]
