@@ -1,29 +1,61 @@
+import 'dart:convert';
+
 class Period {
   final int id;
   final String descriptionDays;
   final int group;
+  Period({
+    required this.id,
+    required this.descriptionDays,
+    required this.group,
+  });
 
-  Period(
-      {required this.id, required this.descriptionDays, required this.group});
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'description_days': descriptionDays,
-        'grupo': group,
-      };
+  Period copyWith({
+    int? id,
+    String? descriptionDays,
+    int? group,
+  }) {
+    return Period(
+      id: id ?? this.id,
+      descriptionDays: descriptionDays ?? this.descriptionDays,
+      group: group ?? this.group,
+    );
+  }
 
-  Period.fromJson(Map<String, dynamic> json)
-      : id = json['id'] ?? 0,
-        descriptionDays = json['description_days'],
-        group = json['grupo'];
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'descriptionDays': descriptionDays,
+      'group': group,
+    };
+  }
 
-  bool operator ==(Object other) =>
-      identical(this, other) ||
-      other is Period &&
-          runtimeType == other.runtimeType &&
-          descriptionDays == other.descriptionDays &&
-          group == other.group;
+  factory Period.fromMap(Map<String, dynamic> map) {
+    return Period(
+      id: map['id'] ?? 0,
+      descriptionDays: map['descriptionDays'] ?? '',
+      group: map['group'] ?? 0,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Period.fromJson(String source) => Period.fromMap(json.decode(source));
 
   @override
-  int get hashCode => descriptionDays.hashCode ^ group.hashCode;
+  String toString() => 'Period(id: $id, descriptionDays: $descriptionDays, group: $group)';
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+  
+    return other is Period &&
+      other.id == id &&
+      other.descriptionDays == descriptionDays &&
+      other.group == group;
+  }
+
+  @override
+  int get hashCode => id.hashCode ^ descriptionDays.hashCode ^ group.hashCode;
 }

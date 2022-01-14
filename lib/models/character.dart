@@ -1,43 +1,113 @@
-import 'package:genshintodaytalent/models/talent.dart';
+import 'dart:convert';
+
 
 class Character {
   final int id;
   final String name;
   final String? description;
-  final String? photo;
-  final Talent talent;
+  final String photo;
+  final int talentID;
   final String type;
   final int stars;
   final bool mine;
+  Character({
+    required this.id,
+    required this.name,
+    this.description,
+    required this.photo,
+    required this.talentID,
+    required this.type,
+    required this.stars,
+     this.mine = false,
+  });
+ 
 
-  Character(
-      {required this.id,
-      required this.name,
-      required this.talent,
-      this.description,
-      this.photo,
-      required this.type,
-      required this.stars,
-      this.mine = false});
+  Character copyWith({
+    int? id,
+    String? name,
+    String? description,
+    String? photo,
+    int? talentID,
+    String? type,
+    int? stars,
+    bool? mine,
+  }) {
+    return Character(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      description: description ?? this.description,
+      photo: photo ?? this.photo,
+      talentID: talentID ?? this.talentID,
+      type: type ?? this.type,
+      stars: stars ?? this.stars,
+      mine: mine ?? this.mine,
+    );
+  }
 
-  Character.fromJson(Map<String, dynamic> json)
-      : id = json['id'],
-        name = json['name'],
-        description = json['description'],
-        type = json['type'],
-        photo = json['photo'],
-        stars = json['stars'],
-        mine = json['mine'],
-        talent = Talent.fromJson(json['talent']);
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'description': description,
+      'photo': photo,
+      'talentID': talentID,
+      'type': type,
+      'stars': stars,
+      'mine': mine,
+    };
+  }
 
-  Map<String, dynamic> toJson() => {
-        'id': id,
-        'name': name,
-        'description': description,
-        'type': type,
-        'photo': photo,
-        'stars': stars,
-        'mine': mine,
-        'talent': talent.toJson(),
-      };
+  factory Character.fromMap(Map<String, dynamic> map) {
+    return Character(
+      id: map['id'] ?? 0,
+      name: map['name'] ?? '',
+      description: map['description'],
+      photo: map['photo'] ?? '',
+      talentID: map['talentID'] ?? 0,
+      type: map['type'] ?? '',
+      stars: map['stars'] ?? 0,
+      mine: false,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory Character.fromJson(String source) => Character.fromMap(json.decode(source));
+
+  @override
+  String toString() {
+    return 'Character(id: $id, name: $name, description: $description, photo: $photo, talentID: $talentID, type: $type, stars: $stars, mine: $mine)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+  
+    return other is Character &&
+      other.id == id &&
+      other.name == name &&
+      other.description == description &&
+      other.photo == photo &&
+      other.talentID == talentID &&
+      other.type == type &&
+      other.stars == stars &&
+      other.mine == mine;
+  }
+
+  @override
+  int get hashCode {
+    return id.hashCode ^
+      name.hashCode ^
+      description.hashCode ^
+      photo.hashCode ^
+      talentID.hashCode ^
+      type.hashCode ^
+      stars.hashCode ^
+      mine.hashCode;
+  }
+
+   bool convertIntToBool(int number) {
+    if (number == 0) return false;
+    return true;
+  }
 }
