@@ -8,7 +8,11 @@ class PeriodDao {
       'CREATE TABLE $_tableName($_id INTEGER PRIMARY KEY, $_descriptionDays varchar(255), $_group INTEGER)';
 
   static const String insert =
-      "insert into $_tableName($_descriptionDays, $_group) values ('Monday and Tuesday', 1)";
+      "insert into $_tableName($_id, $_descriptionDays, $_group) values (1, 'Monday and Thursday', 1)";
+  static const String insertTwo =
+      "insert into $_tableName($_id, $_descriptionDays, $_group) values (2, 'Tuesday and Friday', 2)";
+  static const String insertThree =
+      "insert into $_tableName($_id, $_descriptionDays, $_group) values (3, 'Wednesday and Saturday', 3)";
 
   static const String _tableName = 'periods';
   static const String _id = 'id';
@@ -31,9 +35,7 @@ class PeriodDao {
         group: row[_group],
       );
       periods.add(period);
-
     }
-                
 
     return periods;
   }
