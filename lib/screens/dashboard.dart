@@ -11,6 +11,7 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   final CharacterDao _characterDao = CharacterDao();
+  String dropdownValue = 'Characters';
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +26,42 @@ class _DashboardState extends State<Dashboard> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(height: 100, child: Image.asset('images/Logo.png')),
+            Container(height: 60, child: Image.asset('images/Logo.png')),
+            Container(
+              height: 40,
+              child: DropdownButton(
+                value: dropdownValue,
+                elevation: 16,
+                style: const TextStyle(color: Colors.deepPurple),
+                underline: Container(
+                  height: 2,
+                  color: Colors.deepPurpleAccent,
+                ),
+                onChanged: (String? newValue) {
+                  setState(() {
+                    dropdownValue = newValue!;
+                  });
+                },
+                items: <String>[
+                  'Characters',
+                  'Weapons',
+                  'All',
+                  'Mine Characters',
+                  'Mine Weapons',
+                  'All Mine'
+                ].map<DropdownMenuItem<String>>((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+              ),
+            ),
             Container(
               height: 500,
               child: ListView(scrollDirection: Axis.vertical, children: [
                 FutureBuilder(
-                  future: _characterDao.findAll(),
+                  future: _characterDao.findToday(dropdownValue),
                   builder: (context, snapshot) {
                     switch (snapshot.connectionState) {
                       case ConnectionState.none:
@@ -52,21 +83,28 @@ class _DashboardState extends State<Dashboard> {
                       case ConnectionState.done:
                         final List<Character> characters =
                             snapshot.data as List<Character>;
-                        return Container(
-                          height: 400,
-                          child: GridView.builder(
-                            shrinkWrap: true,
-                            itemCount: characters.length,
-                            gridDelegate:
-                                SliverGridDelegateWithFixedCrossAxisCount(
-                              crossAxisCount: 3,
+
+                        if (characters.length == 0) {
+                          return Container(
+                            child: Text('This category dont have characters'),
+                          );
+                        } else {
+                          return Container(
+                            height: 400,
+                            child: GridView.builder(
+                              shrinkWrap: true,
+                              itemCount: characters.length,
+                              gridDelegate:
+                                  SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                              ),
+                              itemBuilder: (context, index) {
+                                final Character character = characters[index];
+                                return _CharacterItem(character);
+                              },
                             ),
-                            itemBuilder: (context, index) {
-                              final Character character = characters[index];
-                              return _CharacterItem(character);
-                            },
-                          ),
-                        );
+                          );
+                        }
                     }
 
                     return Text('Unknowm error');

@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-
 class Character {
   final int id;
   final String name;
@@ -9,7 +8,7 @@ class Character {
   final int talentID;
   final String type;
   final int stars;
-  final bool mine;
+  final int mine;
   Character({
     required this.id,
     required this.name,
@@ -18,9 +17,8 @@ class Character {
     required this.talentID,
     required this.type,
     required this.stars,
-     this.mine = false,
+    this.mine = 0,
   });
- 
 
   Character copyWith({
     int? id,
@@ -30,7 +28,7 @@ class Character {
     int? talentID,
     String? type,
     int? stars,
-    bool? mine,
+    int? mine,
   }) {
     return Character(
       id: id ?? this.id,
@@ -66,13 +64,14 @@ class Character {
       talentID: map['talentID'] ?? 0,
       type: map['type'] ?? '',
       stars: map['stars'] ?? 0,
-      mine: false,
+      mine: map['mine'] ?? 0,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Character.fromJson(String source) => Character.fromMap(json.decode(source));
+  factory Character.fromJson(String source) =>
+      Character.fromMap(json.decode(source));
 
   @override
   String toString() {
@@ -82,32 +81,27 @@ class Character {
   @override
   bool operator ==(Object other) {
     if (identical(this, other)) return true;
-  
+
     return other is Character &&
-      other.id == id &&
-      other.name == name &&
-      other.description == description &&
-      other.photo == photo &&
-      other.talentID == talentID &&
-      other.type == type &&
-      other.stars == stars &&
-      other.mine == mine;
+        other.id == id &&
+        other.name == name &&
+        other.description == description &&
+        other.photo == photo &&
+        other.talentID == talentID &&
+        other.type == type &&
+        other.stars == stars &&
+        other.mine == mine;
   }
 
   @override
   int get hashCode {
     return id.hashCode ^
-      name.hashCode ^
-      description.hashCode ^
-      photo.hashCode ^
-      talentID.hashCode ^
-      type.hashCode ^
-      stars.hashCode ^
-      mine.hashCode;
-  }
-
-   bool convertIntToBool(int number) {
-    if (number == 0) return false;
-    return true;
+        name.hashCode ^
+        description.hashCode ^
+        photo.hashCode ^
+        talentID.hashCode ^
+        type.hashCode ^
+        stars.hashCode ^
+        mine.hashCode;
   }
 }

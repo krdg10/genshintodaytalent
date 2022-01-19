@@ -11,7 +11,7 @@ import 'package:sqflite/sqflite.dart';
 import 'dao/period_dao.dart';
 
 Future<Database> getDatabase() async {
-  final String path = join(await getDatabasesPath(), 'vintequato.db');
+  final String path = join(await getDatabasesPath(), 'trintadois.db');
   return openDatabase(
     path,
     onCreate: (db, version) async {
@@ -34,7 +34,6 @@ Future<Database> getDatabase() async {
       String charactersJson =
           await rootBundle.loadString('assets/characters.json');
       List charactersList = json.decode(charactersJson);
-      print(charactersList);
       charactersList.forEach((val) {
         Character character = Character.fromMap(val);
         batch.insert('characters', character.toMap());
@@ -42,7 +41,7 @@ Future<Database> getDatabase() async {
 
       batch.commit();
     },
-    version: 24,
+    version: 32,
     //onDowngrade: onDatabaseDowngradeDelete,
   );
 }
