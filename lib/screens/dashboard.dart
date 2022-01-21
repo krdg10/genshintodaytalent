@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:genshintodaytalent/database/dao/character_dao.dart';
 import 'package:genshintodaytalent/models/character.dart';
+import 'package:genshintodaytalent/screens/profilePage.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -100,7 +101,11 @@ class _DashboardState extends State<Dashboard> {
                               ),
                               itemBuilder: (context, index) {
                                 final Character character = characters[index];
-                                return _CharacterItem(character);
+                                return _CharacterItem(
+                                  character: character,
+                                  onClick: () =>
+                                      _showCharacterProfile(context, character),
+                                );
                               },
                             ),
                           );
@@ -120,18 +125,37 @@ class _DashboardState extends State<Dashboard> {
       ),
     );
   }
+
+  void _showCharacterProfile(BuildContext context, Character character) {
+    Navigator.of(context).push(
+      MaterialPageRoute(
+        builder: (context) => ProfilePage(character: character),
+      ),
+    );
+  }
 }
 
 class _CharacterItem extends StatelessWidget {
   final Character character;
-  _CharacterItem(this.character);
+  final Function onClick;
+
+  const _CharacterItem({
+    Key? key,
+    required this.character,
+    required this.onClick,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      child: Column(
-        children: [Image.asset(character.photo), Text(character.name)],
+    return InkWell(
+      onTap: () {
+        onClick();
+      },
+      child: Container(
+        height: 50,
+        child: Column(
+          children: [Image.asset(character.photo), Text(character.name)],
+        ),
       ),
     );
     /*  return Card(
