@@ -1,4 +1,5 @@
-
+import 'package:genshintodaytalent/database/dao/period_dao.dart';
+import 'package:genshintodaytalent/models/period.dart';
 import 'package:genshintodaytalent/models/talent.dart';
 import 'package:sqflite/sqflite.dart';
 
@@ -26,12 +27,19 @@ class TalentDao {
     return talents;
   }
 
-  Future<Talent> findOne(int id) async {
+  Future<dynamic> findOne(int id) async {
     final Database db = await getDatabase();
 
     final result = await db.query(_tableName, where: 'id = ?', whereArgs: [id]);
     List<Talent> talent = await _toList(result);
-    return talent[0];
+    final resultPeriod = await db
+        .query('periods', where: 'id = ?', whereArgs: [talent[0].periodGroup]);
+    List<Period> period = PeriodDao().toList(resultPeriod);
+    List<dynamic> data = [];
+    data.add(talent[0]);
+    data.add(period[0]);
+
+    return data;
   }
 
   Future<List<Talent>> _toList(List<Map<String, dynamic>> result) async {

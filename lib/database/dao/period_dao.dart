@@ -22,11 +22,11 @@ class PeriodDao {
   Future<Period> findOne(int id) async {
     final Database db = await getDatabase();
     final result = await db.query(_tableName, where: 'id = ?', whereArgs: [id]);
-    List<Period> periods = _toList(result);
+    List<Period> periods = toList(result);
     return periods[0];
   }
 
-  List<Period> _toList(List<Map<String, dynamic>> result) {
+  List<Period> toList(List<Map<String, dynamic>> result) {
     final List<Period> periods = [];
     for (Map<String, dynamic> row in result) {
       final Period period = Period(
