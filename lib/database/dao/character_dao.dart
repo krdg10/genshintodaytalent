@@ -6,7 +6,7 @@ import '../app_database.dart';
 
 class CharacterDao {
   static const String tableSql =
-      'CREATE TABLE $_tableName($_id INTEGER PRIMARY KEY AUTOINCREMENT, $_name varchar(250), $_description varchar(1000), $_talent INTEGER, $_photo varchar(1000), $_type varchar(100), $_stars integer, $_mine INTEGER, FOREIGN KEY($_talent) REFERENCES talents(id))';
+      'CREATE TABLE $_tableName($_id INTEGER PRIMARY KEY AUTOINCREMENT, $_name varchar(250), $_description varchar(1000), $_talent INTEGER, $_photo varchar(1000), $_banner varchar(1000), $_type varchar(100), $_stars integer, $_mine INTEGER, FOREIGN KEY($_talent) REFERENCES talents(id))';
 
   static const String _tableName = 'characters';
   static const String _id = 'id';
@@ -17,6 +17,7 @@ class CharacterDao {
   static const String _type = 'type';
   static const String _stars = 'stars';
   static const String _mine = 'mine';
+  static const String _banner = 'banner';
 
   Future<List<Character>> findAll() async {
     final Database db = await getDatabase();
@@ -153,6 +154,7 @@ class CharacterDao {
           description: row[_description],
           talentID: row[_talent],
           photo: row[_photo],
+          banner: row[_banner],
           type: row[_type],
           stars: row[_stars],
           mine: row[_mine]);

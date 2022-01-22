@@ -42,7 +42,14 @@ class ProfilePage extends StatelessWidget {
                   Talent talent = list[0];
                   Period period = list[1];
                   return Container(
-                    child: Text(talent.description),
+                    child: Column(
+                      children: [
+                        Text(talent.description),
+                        Container(
+                          child: Image.asset(character.banner),
+                        ),
+                      ],
+                    ),
                   );
               }
               return Text('Unknowm error');

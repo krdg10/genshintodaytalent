@@ -5,6 +5,8 @@ class Character {
   final String name;
   final String? description;
   final String photo;
+  final String banner;
+
   final int talentID;
   final String type;
   final int stars;
@@ -14,6 +16,7 @@ class Character {
     required this.name,
     this.description,
     required this.photo,
+    required this.banner,
     required this.talentID,
     required this.type,
     required this.stars,
@@ -25,6 +28,7 @@ class Character {
     String? name,
     String? description,
     String? photo,
+    String? banner,
     int? talentID,
     String? type,
     int? stars,
@@ -35,6 +39,7 @@ class Character {
       name: name ?? this.name,
       description: description ?? this.description,
       photo: photo ?? this.photo,
+      banner: banner ?? this.banner,
       talentID: talentID ?? this.talentID,
       type: type ?? this.type,
       stars: stars ?? this.stars,
@@ -48,6 +53,7 @@ class Character {
       'name': name,
       'description': description,
       'photo': photo,
+      'banner': banner,
       'talentID': talentID,
       'type': type,
       'stars': stars,
@@ -61,6 +67,7 @@ class Character {
       name: map['name'] ?? '',
       description: map['description'],
       photo: map['photo'] ?? '',
+      banner: map['banner'] ?? '',
       talentID: map['talentID'] ?? 0,
       type: map['type'] ?? '',
       stars: map['stars'] ?? 0,
@@ -75,7 +82,7 @@ class Character {
 
   @override
   String toString() {
-    return 'Character(id: $id, name: $name, description: $description, photo: $photo, talentID: $talentID, type: $type, stars: $stars, mine: $mine)';
+    return 'Character(id: $id, name: $name, description: $description, photo: $photo, banner: $banner, talentID: $talentID, type: $type, stars: $stars, mine: $mine)';
   }
 
   @override
@@ -87,6 +94,7 @@ class Character {
         other.name == name &&
         other.description == description &&
         other.photo == photo &&
+        other.banner == banner &&
         other.talentID == talentID &&
         other.type == type &&
         other.stars == stars &&
@@ -99,6 +107,7 @@ class Character {
         name.hashCode ^
         description.hashCode ^
         photo.hashCode ^
+        banner.hashCode ^
         talentID.hashCode ^
         type.hashCode ^
         stars.hashCode ^

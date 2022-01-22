@@ -2,9 +2,10 @@
   {
     "id": 0,
     "name": "Kokomi",
-    "description": "ablablue",
+    "description": "Sangonomiya Kokomi is a playable Hydro character in Genshin Impact. The young Divine Priestess of Watatsumi Island and a descendant of the Sangonomiya Clan. Kokomi is in charge of most of Watatsumi's affairs, shouldering heavy responsibilities alone in hopes for giving Watatsumi Island's people the hopes and happiness that they desire.",
     "talentID": 0,
     "photo": "images/Kokomi.png",
+    "banner": "images/Kokomi_Banner.png",
     "type": "char",
     "stars": 5,
     "mine": 0
@@ -12,9 +13,10 @@
   {
     "id": 1,
     "name": "Diona",
-    "description": "ablablue",
+    "description": "Diona Katzlein is a playable Cryo character in Genshin Impact. Despite being a bartender at Cat's Tail, she actually despises alcohol and wants nothing more than to ruin Mondstadt's wine industry—a feat easier said than done when her patrons absolutely love her drinks. She is the daughter of Draff, a hunter in Springvale.",
     "talentID": 1,
     "photo": "images/Diona.png",
+    "banner": "images/Diona_Banner.png",
     "type": "char",
     "stars": 4,
     "mine": 0
@@ -22,9 +24,10 @@
   {
     "id": 2,
     "name": "Eula",
-    "description": "ablablue",
+    "description": "Eula Lawrence is a playable Cryo character in Genshin Impact. A descendant of the infamous and tyrannical Lawrence Clan and niece of Schubert, Eula is the captain of the Reconnaissance Company with the Knights of Favonius.",
     "talentID": 2,
     "photo": "images/Eula.png",
+    "banner": "images/Eula_Banner.png",
     "type": "char",
     "stars": 5,
     "mine": 0
@@ -32,9 +35,10 @@
   {
     "id": 3,
     "name": "Xiangling",
-    "description": "ablablue",
+    "description": "Mao Xiangling is a playable Pyro character in Genshin Impact. She is the Head Chef at the Wanmin Restaurant and runs it alongside her father Chef Mao. As a chef, Xiangling isn't afraid to try out different recipes or 'exotic' ingredients... making her dishes sometimes quite unique.",
     "talentID": 3,
     "photo": "images/Xiangling.png",
+    "banner": "images/Xiangling_Banner.png",
     "type": "char",
     "stars": 4,
     "mine": 0
@@ -42,9 +46,10 @@
   {
     "id": 4,
     "name": "Xinqgiu",
-    "description": "ablablue",
+    "description": "Xingqiu is a playable Hydro character in Genshin Impact. He is the second son of the Guild Manager of the Feiyun Commerce Guild, an influential group in Liyue, and is also a self-proclaimed practitioner of the Guhua Clan's arts.",
     "talentID": 4,
     "photo": "images/Xingqiu.png",
+    "banner": "images/Xingqiu_Banner.png",
     "type": "char",
     "stars": 4,
     "mine": 0
@@ -52,11 +57,45 @@
   {
     "id": 5,
     "name": "Shogun Raiden",
-    "description": "ablablue",
+    "description": "The Raiden Shogun, real name Raiden Ei, is a playable Electro character in Genshin Impact. She is the vessel of Beelzebul, the current Electro Archon of Inazuma, and meditates inside the Plane of Euthymia while letting her puppet control the daily affairs of the nation.",
     "talentID": 5,
     "photo": "images/Shogun_Raiden.png",
+    "banner": "images/Shogun_Raiden_Banner.png",
     "type": "char",
     "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 6,
+    "name": "Luxurious Sea-Lord",
+    "description": "Luxurious Sea-Lord is a 4-Star claymore obtainable from the Moonlight Merriment event.",
+    "talentID": 8,
+    "photo": "images/Luxurious_Sea-Lord.png",
+    "banner": "images/Luxurious_Sea-Lord_Banner.png",
+    "type": "weapon",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 7,
+    "name": "Prototype Amber",
+    "description": "Prototype Amber is a Liyue catalyst.",
+    "talentID": 7,
+    "photo": "images/Prototype_Amber.png",
+    "banner": "images/Prototype_Amber_Banner.png",
+    "type": "weapon",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 8,
+    "name": "Favonius Sword",
+    "description": "Favonius Sword is a 4-Star sword.",
+    "talentID": 6,
+    "photo": "images/Favonius_Sword.png",
+    "banner": "images/Favonius_Sword_Banner.png",
+    "type": "weapon",
+    "stars": 4,
     "mine": 0
   }
 ]

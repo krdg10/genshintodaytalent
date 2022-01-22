@@ -53,11 +53,30 @@ flutter:
   #   - images/a_dot_ham.jpeg
   assets:
     - Diona.png
+    - Diona_Banner.png
     - Kokomi.png
+    - Kokomi_Banner.png
     - Eula.png
+    - Eula_Banner.png
     - Xiangling.png
+    - Xiangling_Banner.png
     - Xingqiu.png
+    - Xingqiu_Banner.png
     - Shogun_Raiden.png
+    - Shogun_Raiden_Banner.png
+    - Prototype_Amber.png
+    - Prototype_Amber_Banner.png
+    - Luxurious_Sea-Lord.png
+    - Luxurious_Sea-Lord_Banner.png
+    - Favonius_Sword.png
+    - Favonius_Sword_Banner.png
+    - Scattered_Piece_Of_Decarabian's_Dream.png
+    - Scattered_Piece_Of_Decarabian's_Dream_Location.jpg
+    - Mist_Veiled_Primo_Elixir.png
+    - Mist_Veiled_Primo_Elixir_Location.jpg
+    - Chunk_Of_Aerosiderite.png
+    - Chunk_Of_Aerosiderite_Location.jpg
+    - Prototype_Amber.png
     - Logo.png
     - characters.json
     - talents.json

@@ -11,7 +11,7 @@ import 'package:sqflite/sqflite.dart';
 import 'dao/period_dao.dart';
 
 Future<Database> getDatabase() async {
-  final String path = join(await getDatabasesPath(), 'trintadois.db');
+  final String path = join(await getDatabasesPath(), 'trintacinco.db');
   return openDatabase(
     path,
     onCreate: (db, version) async {
@@ -41,7 +41,7 @@ Future<Database> getDatabase() async {
 
       batch.commit();
     },
-    version: 32,
+    version: 35,
     //onDowngrade: onDatabaseDowngradeDelete,
   );
 }
