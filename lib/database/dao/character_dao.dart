@@ -46,6 +46,14 @@ class CharacterDao {
           date, db, 'weapon');
     } else if (dropdownValue == 'All Mine') {
       result = await queryWhenDropdownAllMineCharactersAndWeapons(date, db);
+    } else if (dropdownValue == 'Tomorrow Characters') {
+      var tomorrow = date.add(const Duration(days: 1));
+      result =
+          await queryWhenDropdownOnlyCharactersorWeapons(tomorrow, db, 'char');
+    } else if (dropdownValue == 'Tomorrow Weapons') {
+      var tomorrow = date.add(const Duration(days: 1));
+      result = await queryWhenDropdownOnlyCharactersorWeapons(
+          tomorrow, db, 'weapon');
     }
 
     if (result == null) {

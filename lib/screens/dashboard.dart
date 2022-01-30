@@ -49,7 +49,9 @@ class _DashboardState extends State<Dashboard> {
                   'All',
                   'Mine Characters',
                   'Mine Weapons',
-                  'All Mine'
+                  'All Mine',
+                  'Tomorrow Characters',
+                  'Tomorrow Weapons'
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -154,7 +156,7 @@ class _CharacterItem extends StatelessWidget {
       child: Container(
         height: 50,
         child: Column(
-          children: [Image.asset(character.photo), Text(character.name)],
+          children: [Image.asset(character.photo, height: 100, width: 100,), Text(character.name)],
         ),
       ),
     );
