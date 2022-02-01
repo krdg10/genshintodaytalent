@@ -10,7 +10,7 @@ class Character {
   final int talentID;
   final String type;
   final int stars;
-  final int mine;
+  int mine;
   Character({
     required this.id,
     required this.name,

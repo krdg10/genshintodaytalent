@@ -3,6 +3,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:intl/intl.dart';
 
 import '../app_database.dart';
+import 'package:timezone/standalone.dart' as tz;
 
 class CharacterDao {
   static const String tableSql =
@@ -18,6 +19,7 @@ class CharacterDao {
   static const String _stars = 'stars';
   static const String _mine = 'mine';
   static const String _banner = 'banner';
+  final localHour = tz.getLocation('America/Anchorage');
 
   Future<List<Character>> findAll() async {
     final Database db = await getDatabase();
@@ -26,10 +28,20 @@ class CharacterDao {
     return characters;
   }
 
+  Future<List<Character>> findOne(int id) async {
+    final Database db = await getDatabase();
+    final result = await db.query(_tableName, where: 'id = ?', whereArgs: [id]);
+    Future<List<Character>> characters = _toList(result);
+    return characters;
+  }
+
   Future<List<Character>> findToday(String dropdownValue) async {
-    var date = DateTime.now();
+    final localizedDt = tz.TZDateTime.from(DateTime.now(), localHour);
+
+    var date = localizedDt;
     var result;
     final Database db = await getDatabase();
+
 
     if (dropdownValue == 'Characters') {
       result = await queryWhenDropdownOnlyCharactersorWeapons(date, db, 'char');
@@ -97,7 +109,6 @@ class CharacterDao {
           'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ?',
           [groupNumber]);
     }
-    print(result);
     return result;
   }
 
@@ -151,6 +162,21 @@ class CharacterDao {
       groupNumber = 4;
     }
     return groupNumber;
+  }
+
+  void updateMine(int id, int mine) async {
+
+
+    if (mine == 0) {
+      mine = 1;
+    } else {
+      mine = 0;
+    }
+    final Database db = await getDatabase();
+    await db
+        .rawUpdate('UPDATE $_tableName SET $_mine = ? where $_id = ?', [mine, id]);
+
+
   }
 
   Future<List<Character>> _toList(List<Map<String, dynamic>> result) async {

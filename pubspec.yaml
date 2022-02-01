@@ -26,6 +26,7 @@ dependencies:
   sqflite:
   path:
   intl: ^0.17.0-nullsafety.2
+  timezone:
 
 
   # The following adds the Cupertino Icons font to your application.
