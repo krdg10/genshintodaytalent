@@ -28,6 +28,14 @@ class CharacterDao {
     return characters;
   }
 
+  Future<List<Character>> findAllWeaponOrChar(String type) async {
+    final Database db = await getDatabase();
+    final result =
+        await db.query(_tableName, where: 'type = ?', whereArgs: [type]);
+    Future<List<Character>> characters = _toList(result);
+    return characters;
+  }
+
   Future<List<Character>> findOne(int id) async {
     final Database db = await getDatabase();
     final result = await db.query(_tableName, where: 'id = ?', whereArgs: [id]);
@@ -41,7 +49,6 @@ class CharacterDao {
     var date = localizedDt;
     var result;
     final Database db = await getDatabase();
-
 
     if (dropdownValue == 'Characters') {
       result = await queryWhenDropdownOnlyCharactersorWeapons(date, db, 'char');
@@ -165,18 +172,14 @@ class CharacterDao {
   }
 
   void updateMine(int id, int mine) async {
-
-
     if (mine == 0) {
       mine = 1;
     } else {
       mine = 0;
     }
     final Database db = await getDatabase();
-    await db
-        .rawUpdate('UPDATE $_tableName SET $_mine = ? where $_id = ?', [mine, id]);
-
-
+    await db.rawUpdate(
+        'UPDATE $_tableName SET $_mine = ? where $_id = ?', [mine, id]);
   }
 
   Future<List<Character>> _toList(List<Map<String, dynamic>> result) async {
