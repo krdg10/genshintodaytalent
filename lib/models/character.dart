@@ -3,7 +3,7 @@ import 'dart:convert';
 class Character {
   final int id;
   final String name;
-  final String? description;
+  final String description;
   final String photo;
   final String banner;
 
@@ -14,7 +14,7 @@ class Character {
   Character({
     required this.id,
     required this.name,
-    this.description,
+    required this.description,
     required this.photo,
     required this.banner,
     required this.talentID,
@@ -65,7 +65,7 @@ class Character {
     return Character(
       id: map['id'] ?? 0,
       name: map['name'] ?? '',
-      description: map['description'],
+      description: map['description'] ?? '',
       photo: map['photo'] ?? '',
       banner: map['banner'] ?? '',
       talentID: map['talentID'] ?? 0,
