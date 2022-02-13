@@ -27,6 +27,7 @@ dependencies:
   path:
   intl: ^0.17.0-nullsafety.2
   timezone:
+  flutter_rating_bar: ^4.0.0-nullsafety.0
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -65,6 +66,12 @@ flutter:
     - Xingqiu_Banner.png
     - Shogun_Raiden.png
     - Shogun_Raiden_Banner.png
+    - Ganyu.jpeg
+    - Banner_Ganyu.png
+    - Bennett.png
+    - Banner_Bennett.png
+    - Banner_Ayaka.png
+    - Ayaka.png
     - Prototype_Amber.png
     - Prototype_Amber_Banner.png
     - Luxurious_Sea-Lord.png
