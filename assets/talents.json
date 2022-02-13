@@ -2,50 +2,50 @@
     {
         "id": 0,
         "name": "Transience",
-        "description": "ablablue",
+        "description": "Transience is the dream of the nation of thunder. The fleeting nature of this mortal world is the essence of beauty, for are our lives in this world not akin to the levin flash? Yet the might of the divine comes suddenly, and before the roar of eternity, who can stand.",
         "periodGroup": 1,
-        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
-        "location": "ablabllue"
+        "photo": "images/Talent_Transience.jpeg",
+        "location": "images/Location_Talent_Violet_Court.jpg"
     },
     {
         "id": 1,
         "name": "Freedom",
-        "description": "ablablue",
+        "description": "Freedom is the spirit of the city of wind. To sing is one such freedom. to sing on the land created by the Anemo Archon is to send your heart away with the song on the wind.",
         "periodGroup": 1,
-        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
-        "location": "ablabllue"
+        "photo": "images/Talent_Freedom.jpeg",
+        "location": "images/Location_Talent_Forsaken_Rifted.jpg"
     },
     {
         "id": 2,
         "name": "Resistance",
-        "description": "ablablue",
+        "description": "Resistance is the backbone of the city of Wind. The history of Mondstadt is one of resistances. People rose up to allow the future Mondstadt's poetry to freely be that of the wind and be spread across the land.",
         "periodGroup": 2,
-        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
-        "location": "ablabllue"
+        "photo": "images/Talent_Resistance.jpeg",
+        "location": "images/Location_Talent_Forsaken_Rifted.jpg"
     },
     {
         "id": 3,
         "name": "Diligence",
-        "description": "ablablue",
+        "description": "Industriousness is the foundation of the land of the earth. Industriousness is believing in one's own ability to earn a place in the land of the gods through sweat, wisdom, and power.",
         "periodGroup": 2,
-        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
-        "location": "ablabllue"
+        "photo": "images/Talent_Diligence.jpeg",
+        "location": "images/Location_Talent_Taishan_Mansion.jpg"
     },
     {
         "id": 4,
         "name": "Gold",
-        "description": "ablablue",
+        "description": "Gold is the symbol of the Land of the Earth. Gold is the wealth of Liyue, but Liyue's true wealth is the hearts of its people that shine like gold.",
         "periodGroup": 3,
-        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
-        "location": "ablabllue"
+        "photo": "images/Talent_Gold.jpeg",
+        "location": "images/Location_Talent_Taishan_Mansion.jpg"
     },
     {
         "id": 5,
         "name": "Light",
-        "description": "ablablue",
+        "description": "Light is the yearning of the land of thunder. Though they must live forever on the earth, humanity will always reach for the light. Mortals will pursue and surpass, and they wil never stop. A sealed eternity may, perhaps, look magnificent, but its essence is death.",
         "periodGroup": 3,
-        "photo": "https://s3.us-east-1.amazonaws.com/gamewith-en/article_tools/genshin-impact/gacha/s_i_65.png",
-        "location": "ablabllue"
+        "photo": "images/Talent_Light.jpeg",
+        "location": "images/Location_Talent_Violet_Court.jpg"
     },
     {
         "id": 6,
@@ -70,5 +70,29 @@
         "periodGroup": 3,
         "photo": "images/Chunk_Of_Aerosiderite.png",
         "location": "images/Chunk_Of_Aerosiderite_Location.jpg"
+    },
+    {
+        "id": 9,
+        "name": "Elegance",
+        "description": "Elegance is the form of the nation of thunder. Elegance abhors vulgarity, and the elegant ever walk alone. Resisting base evils, unmoved by base loves, never taking refuge in base ignorance - that is how one perceives the chasm between the elegeant and the contemptuous.",
+        "periodGroup": 2,
+        "photo": "images/Talent_Elegance.jpeg",
+        "location": "images/Location_Talent_Violet_Court.jpg"
+    },
+    {
+        "id": 10,
+        "name": "Ballad",
+        "description": "Poetry is the soul of the Land of the Wind. Poetry is the manifestations of the desire to spread the word. Though nothing is eternal, though nothing will be the same, the wind's poetry will still spread beyond the skies, the land, the seas to every corner of the world.",
+        "periodGroup": 3,
+        "photo": "images/Talent_Ballad.jpeg",
+        "location": "images/Location_Talent_Forsaken_Rifted.jpg"
+    },
+    {
+        "id": 11,
+        "name": "Prosperity",
+        "description": "Prosperity is the pursuit of the Land of the Earth. Prosperity is Liyue's past, present, and future. This prosperity, unmatched and unobtainable by any of the other nations, is all for Liyue and its children to enjoy.",
+        "periodGroup": 1,
+        "photo": "images/Talent_Prosperity.jpeg",
+        "location": "images/Location_Talent_Taishan_Mansion.jpg"
     }
 ]

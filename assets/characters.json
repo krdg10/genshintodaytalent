@@ -97,5 +97,38 @@
     "type": "weapon",
     "stars": 4,
     "mine": 0
+  },
+  {
+    "id": 9,
+    "name": "Ayaka",
+    "description": "Kamisato Ayaka is a playable Cryo character in Genshin Impact. She is the oldest daughter of the Kamisato Clan and sister of Kamisato Ayato. Being beautiful, elegant, and graceful, the common folk have nothing to bad-mouth Ayaka about. Because of her social status as the eldest daughter of the Kamisato Clan of the Yashiro Commission and as the Shirasagi Himegimi, Ayaka is seen as a model of perfection.",
+    "talentID": 9,
+    "photo": "images/Ayaka.png",
+    "banner": "images/Banner_Ayaka.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 10,
+    "name": "Bennett",
+    "description": "Bennett is a playable Pyro character in Genshin Impact. An orphan discovered by an elderly adventurer as a baby, Bennett was raised in Mondstadt's Adventurers' Guild. He is the one and only member of 'Benny's Adventure Team,' as everyone else left the team after experiencing the constant misfortune that follows him.",
+    "talentID": 2,
+    "photo": "images/Bennett.png",
+    "banner": "images/Banner_Bennett.png",
+    "type": "char",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 11,
+    "name": "Ganyu",
+    "description": "Ganyu is a playable Cryo character in Genshin Impact. She is a half-qilin Adeptus under contract with the Geo Archon Morax and serves as the general secretary of the Liyue Qixing. Ganyu first appears in Teyvat Chapter Storyline Chapter 1, Act 2: Farewell, the Archaic Lord.",
+    "talentID": 3,
+    "photo": "images/Ganyu.jpeg",
+    "banner": "images/Banner_Ganyu.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
   }
 ]
