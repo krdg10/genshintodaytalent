@@ -130,5 +130,27 @@
     "type": "char",
     "stars": 5,
     "mine": 0
+  },
+  {
+    "id": 12,
+    "name": "Hu Tao",
+    "description": "Hu Tao  is a playable Pyro character in Genshin Impact. She is the 77th Director of the Wangsheng Funeral Parlor.",
+    "talentID": 3,
+    "photo": "images/Hu_Tao.png",
+    "banner": "images/Banner_Hu_Tao.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 13,
+    "name": "Arataki Itto",
+    "description": "Arataki Itto is a playable Geo character in Genshin Impact. A descendant of the crimson oni, Itto is also the leader and founder of the Arataki Gang.",
+    "talentID": 9,
+    "photo": "images/Arataki_Itto.png",
+    "banner": "images/Banner_Arataki_Itto.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
   }
 ]

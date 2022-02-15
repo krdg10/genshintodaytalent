@@ -5,14 +5,14 @@ class Talent {
   final int id;
   final String name;
   final String description;
-  final String? location;
+  final String location;
   final String photo;
   final int periodGroup;
   Talent({
     required this.id,
     required this.name,
     required this.description,
-    this.location,
+    required this.location,
     required this.photo,
     required this.periodGroup,
   });
@@ -51,7 +51,7 @@ class Talent {
       id: map['id'] ?? 0,
       name: map['name'] ?? '',
       description: map['description'] ?? '',
-      location: map['location'],
+      location: map['location'] ?? '',
       photo: map['photo'] ?? '',
       periodGroup: map['periodGroup'] ?? 0,
     );

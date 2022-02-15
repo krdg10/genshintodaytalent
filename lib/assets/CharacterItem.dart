@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:genshintodaytalent/models/character.dart';
-import 'package:genshintodaytalent/screens/profilePage.dart';
 
 class CharacterItem extends StatelessWidget {
   final Character character;

@@ -8,13 +8,23 @@ class ListPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    String title;
+    if (type == 'char'){
+      title = 'Characters';
+    }
+    else {
+      title = 'Weapons';
+    }
     final CharacterDao _characterDao = CharacterDao();
     return Scaffold(
       appBar: AppBar(
-        title: Text('List of $type'),
+        title: Text('List of $title'),
       ),
-      body: ListGrid(
-        listOfCharsOrWeapons: _characterDao.findAllWeaponOrChar(type),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 16),
+        child: ListGrid(
+          listOfCharsOrWeapons: _characterDao.findAllWeaponOrChar(type),
+        ),
       ),
     );
   }

@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:genshintodaytalent/assets/CharacterItem.dart';
-import 'package:genshintodaytalent/assets/Functions.dart';
 import 'package:genshintodaytalent/assets/ListGrid.dart';
 import 'package:genshintodaytalent/database/dao/character_dao.dart';
-import 'package:genshintodaytalent/models/character.dart';
 import 'package:genshintodaytalent/screens/listPage.dart';
-import 'package:genshintodaytalent/screens/profilePage.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({Key? key}) : super(key: key);
@@ -23,7 +19,7 @@ class _DashboardState extends State<Dashboard> {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text('teste'),
+          child: Text('Genshin Today'),
         ),
       ),
       drawer: Drawer(
@@ -32,12 +28,17 @@ class _DashboardState extends State<Dashboard> {
           children: [
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
-              ),
-              child: Text('Drawer Header'),
+                  color: Colors.blue,
+                  image: DecorationImage(
+                      image: AssetImage("images/Wallpaper.jpg"),
+                      fit: BoxFit.cover)),
+              child: Text('Genshin Today'),
             ),
             ListTile(
-              title: const Text('All Characters'),
+              title: const Text(
+                'All Characters',
+                style: TextStyle(color: Colors.blue),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(
@@ -48,7 +49,10 @@ class _DashboardState extends State<Dashboard> {
               },
             ),
             ListTile(
-              title: const Text('All Weapons'),
+              title: const Text(
+                'All Weapons',
+                style: TextStyle(color: Colors.blue),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.of(context).push(
@@ -72,10 +76,10 @@ class _DashboardState extends State<Dashboard> {
               child: DropdownButton(
                 value: dropdownValue,
                 elevation: 16,
-                style: const TextStyle(color: Colors.deepPurple),
+                style: const TextStyle(color: Colors.blue),
                 underline: Container(
                   height: 2,
-                  color: Colors.deepPurpleAccent,
+                  color: Colors.blueAccent,
                 ),
                 onChanged: (String? newValue) {
                   setState(() {

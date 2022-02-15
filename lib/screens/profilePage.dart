@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:genshintodaytalent/database/dao/character_dao.dart';
 import 'package:genshintodaytalent/database/dao/talent_dao.dart';
 import 'package:genshintodaytalent/models/character.dart';
@@ -50,31 +52,116 @@ class _ProfilePageState extends State<ProfilePage> {
                   bool mine;
                   Talent talent = list[0];
                   Period period = list[1];
+                  String descriptionDays = period.descriptionDays;
                   mine = convertIntToBool(widget.character.mine);
+                  final snackBar = SnackBar(
+                    content: const Text('Change complete with successfully'),
+                  );
                   return Container(
-                    child: Column(
-                      children: [
-                        Text(talent.description),
-                        Container(
-                          child: Image.asset(widget.character.banner),
+                    child: ListView(scrollDirection: Axis.vertical, children: [
+                      Container(
+                        child: Image.asset(widget.character.banner),
+                      ),
+                      Center(
+                        child: RatingBar.builder(
+                          initialRating: widget.character.stars.toDouble(),
+                          ignoreGestures: true,
+                          itemBuilder: (context, _) => Icon(
+                            Icons.star,
+                            color: Colors.blue,
+                          ),
+                          onRatingUpdate: (_) {},
                         ),
-                        Switch(
-                          value: mine,
-                          onChanged: (value) {
-                            setState(() {
-                              print(mine);
-                              mine = value;
-                              print(mine);
-                            });
-                            _characterDao.updateMine(
-                                widget.character.id, widget.character.mine);
-                            widget.character.mine = convertBoolToInt(value);
-                          },
-                          activeTrackColor: Colors.lightGreenAccent,
-                          activeColor: Colors.green,
+                      ),
+                      ListTile(
+                        title: Text(widget.character.description),
+                      ),
+                      ListTile(
+                        title: Row(
+                          children: [
+                            Padding(
+                              padding: const EdgeInsets.only(right: 8),
+                              child: Text(
+                                'Mine',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                            Container(
+                              height: 20,
+                              child: Switch(
+                                value: mine,
+                                onChanged: (value) {
+                                  setState(() {
+                                    mine = value;
+                                  });
+                                  _characterDao.updateMine(widget.character.id,
+                                      widget.character.mine);
+                                  widget.character.mine =
+                                      convertBoolToInt(value);
+
+                                  ScaffoldMessenger.of(context)
+                                      .showSnackBar(snackBar);
+                                },
+                                activeTrackColor: Colors.lightGreenAccent,
+                                activeColor: Colors.green,
+                              ),
+                            ),
+                          ],
                         ),
-                      ],
-                    ),
+                      ),
+                      ListTile(
+                        title: Column(
+                          children: [
+                            Row(
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.only(right: 8),
+                                  child: Container(
+                                    height: 50,
+                                    child: Image.asset(talent.photo),
+                                  ),
+                                ),
+                                Text(
+                                  talent.name,
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8),
+                              child: Row(
+                                children: [
+                                  Text(
+                                    'Days of week: ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
+                                  Text(descriptionDays),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 8, bottom: 8),
+                              child: Text(talent.description),
+                            ),
+                            Row(
+                              children: [
+                                Text(
+                                  'Location: ',
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                              ],
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(bottom: 16),
+                              child: Container(
+                                child: Image.asset(talent.location),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    ]),
                   );
               }
               return Text('Unknowm error');
@@ -97,3 +184,21 @@ class _ProfilePageState extends State<ProfilePage> {
     return 1;
   }
 }
+
+/*
+estruturar o "design" do profile. pelo menos botar todas as infos na tela pra ver como fica.
+
+
+
+// https://flutterhq.com/questions-and-answers/647/change-local-timezone-in-dart
+mine funcionando já... só tem que fazer att quando volta pra dashboard e tiver no mine
+
+
+> procurar widget. estudar cookbook e tal
+> profile page foco
+> diminuir switch do main, deixar alinhado horizontal
+> ver se tem algo melhor pra fazer com a estrela... alguma legenda sla
+> depois disso, colocar os talentos na tela. location, nome, icone e dias da semana.
+> Talvez priorizar por tudo na tela e depois isso de alinhamento... vamos ver. Tem o design de algumas coisas (profile, drewer, pagina do drewer, footer)
+> Ai depois vejo isso. mas de forma menos enrolada espero
+ */
