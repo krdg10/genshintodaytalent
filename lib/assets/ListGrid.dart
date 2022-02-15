@@ -9,7 +9,6 @@ class ListGrid extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       height: 500,
       child: ListView(scrollDirection: Axis.vertical, children: [
@@ -39,7 +38,16 @@ class ListGrid extends StatelessWidget {
 
                 if (characters.length == 0) {
                   return Container(
-                    child: Text('This category dont have characters'),
+                    child: Padding(
+                      padding: const EdgeInsets.only(top: 80),
+                      child: Center(
+                        child: Text(
+                          "This category don't have elements.",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 24),
+                        ),
+                      ),
+                    ),
                   );
                 } else {
                   return Container(
