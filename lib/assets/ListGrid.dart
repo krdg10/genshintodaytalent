@@ -11,7 +11,7 @@ class ListGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 500,
+      height: height.toDouble(),
       child: ListView(scrollDirection: Axis.vertical, children: [
         FutureBuilder(
           future: listOfCharsOrWeapons,

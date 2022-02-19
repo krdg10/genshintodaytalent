@@ -66,7 +66,6 @@ class _DashboardState extends State<Dashboard> {
         ),
       ),
       body: Container(
-        height: 600,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -105,7 +104,7 @@ class _DashboardState extends State<Dashboard> {
             ),
             ListGrid(
               listOfCharsOrWeapons: _characterDao.findToday(dropdownValue),
-              height: 400,
+              height: 500,
             ),
           ],
         ),
@@ -114,7 +113,7 @@ class _DashboardState extends State<Dashboard> {
         child: Container(
           height: 50,
           child: Padding(
-            padding: const EdgeInsets.only(bottom: 30),
+            padding: const EdgeInsets.only(bottom: 15),
             child: Center(
               child: Text(
                 "Dates according to the America server.",

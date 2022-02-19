@@ -184,13 +184,3 @@ class _ProfilePageState extends State<ProfilePage> {
     return 1;
   }
 }
-
-/*
-mine funcionando já... só tem que fazer att quando volta pra dashboard e tiver no mine
-
-> colocar pra imagem expandir on tap. location e tal. 
-> pedir aprovação
-
-> Procurar por isso de expandir a imagem. E ver se tem algo que posso melhorar no design. Por ultimo e talvez outra versão, negócio de mudar o mine na hora de voltar.
-
- */

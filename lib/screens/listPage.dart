@@ -23,7 +23,7 @@ class ListPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 16),
         child: ListGrid(
           listOfCharsOrWeapons: _characterDao.findAllWeaponOrChar(type),
-          height: 500,
+          height: 600,
         ),
       ),
     );
