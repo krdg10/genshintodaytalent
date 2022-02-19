@@ -152,5 +152,71 @@
     "type": "char",
     "stars": 5,
     "mine": 0
+  },
+  {
+    "id": 14,
+    "name": "Kazuha Kaedehara",
+    "description": "Kaedehara Kazuha is a playable Anemo character in Genshin Impact. A wandering samurai of the once-famed Kaedehara Clan, Kazuha is a temporary crewmember of The Crux.",
+    "talentID": 3,
+    "photo": "images/Kazuha.png",
+    "banner": "images/Banner_Kazuha.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 15,
+    "name": "Venti",
+    "description": "Venti is a playable Anemo character in Genshin Impact. He is a free-spirited, wine-loving bard in Mondstadt and the current mortal vessel of Barbatos, the Anemo Archon.",
+    "talentID": 10,
+    "photo": "images/Venti.png",
+    "banner": "images/Banner_Venti.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 16,
+    "name": "Xiao",
+    "description": "Xiao is a playable Anemo character in Genshin Impact. He is an adeptus, under the name Alatus, and the only known remaining member of the five foremost Yakshas dispatched by Morax to subdue the demonic spirits that plagued Liyue. He currently resides in Wangshu Inn and mostly secludes himself from crowds and human interactions.",
+    "talentID": 11,
+    "photo": "images/Xiao.png",
+    "banner": "images/Banner_Xiao.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 17,
+    "name": "Zhongli",
+    "description": "Zhongli is a playable Geo character in Genshin Impact. He is later revealed to be the current vessel of the Geo Archon, Morax, who has decided to experience the world from the perspective of a mortal. After giving up his Gnosis, he retires from his position as an Archon and returns to his former identity as an Adeptus, although still under the guise of being a human. He currently works as a consultant of the Wangsheng Funeral Parlor.",
+    "talentID": 4,
+    "photo": "images/Zhongli.jpeg",
+    "banner": "images/Banner_Zhongli.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 18,
+    "name": "Albedo",
+    "description": "Albedo, also known as the 'Kreideprinz' is a playable Geo character in Genshin Impact. A synthetic human made by the alchemist Rhinedottir, the mysterious Albedo is the Chief Alchemist and Captain of the Investigation Team of the Knights of Favonius. Through a recommendation from the adventurer Alice, with Sucrose as his assistant, he holds an infinite desire to learn about the world of Teyvat, carefully studying every object around him.",
+    "talentID": 10,
+    "photo": "images/Albedo.jpeg",
+    "banner": "images/Banner_Albedo.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 19,
+    "name": "Beidou",
+    "description": "Beidou is a playable Electro character in Genshin Impact. She is the captain of The Crux, a renowned crew in Liyue. Besides her capabilities as a fleet captain and her immense strength, many in Liyue know her for her lack of fear towards the Tianquan of the Liyue Qixing, Ningguang — a trait that the other appreciates, yet grows irritated by.",
+    "talentID": 4,
+    "photo": "images/Beidou.png",
+    "banner": "images/Banner_Beidou.png",
+    "type": "char",
+    "stars": 4,
+    "mine": 0
   }
 ]

@@ -9,10 +9,9 @@ class ListPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String title;
-    if (type == 'char'){
+    if (type == 'char') {
       title = 'Characters';
-    }
-    else {
+    } else {
       title = 'Weapons';
     }
     final CharacterDao _characterDao = CharacterDao();
@@ -24,6 +23,7 @@ class ListPage extends StatelessWidget {
         padding: const EdgeInsets.only(top: 16),
         child: ListGrid(
           listOfCharsOrWeapons: _characterDao.findAllWeaponOrChar(type),
+          height: 500,
         ),
       ),
     );

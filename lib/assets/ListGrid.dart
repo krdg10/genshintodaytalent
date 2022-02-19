@@ -5,7 +5,8 @@ import 'package:genshintodaytalent/models/character.dart';
 
 class ListGrid extends StatelessWidget {
   final Future<List<Character>> listOfCharsOrWeapons;
-  const ListGrid({required this.listOfCharsOrWeapons});
+  final int height;
+  const ListGrid({required this.listOfCharsOrWeapons, required this.height});
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +52,7 @@ class ListGrid extends StatelessWidget {
                   );
                 } else {
                   return Container(
-                    height: 400,
+                    height: height.toDouble(),
                     child: GridView.builder(
                       shrinkWrap: true,
                       itemCount: characters.length,

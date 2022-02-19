@@ -30,8 +30,9 @@ class CharacterDao {
 
   Future<List<Character>> findAllWeaponOrChar(String type) async {
     final Database db = await getDatabase();
-    final result =
-        await db.query(_tableName, where: 'type = ?', whereArgs: [type]);
+    final result = await db.query(_tableName,
+        where: 'type = ?', whereArgs: [type], orderBy: _name);
+
     Future<List<Character>> characters = _toList(result);
     return characters;
   }
@@ -96,10 +97,9 @@ class CharacterDao {
           await db.query(_tableName, where: 'type = ?', whereArgs: ['$type']);
     } else {
       result = await db.rawQuery(
-          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.type = ?',
+          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.type = ? order by char.name',
           [groupNumber, '$type']);
     }
-
     return result;
   }
 
@@ -113,7 +113,7 @@ class CharacterDao {
       result = await db.query(_tableName);
     } else {
       result = await db.rawQuery(
-          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ?',
+          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? order by char.type, char.name',
           [groupNumber]);
     }
     return result;
@@ -130,7 +130,7 @@ class CharacterDao {
           where: 'type = ? and mine = ?', whereArgs: ['$type', 1]);
     } else {
       result = await db.rawQuery(
-          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.type = ? and char.mine = ?',
+          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.type = ? and char.mine = ? order by char.name',
           [groupNumber, '$type', 1]);
     }
 
@@ -147,7 +147,7 @@ class CharacterDao {
       result = await db.query(_tableName, where: 'mine = ?', whereArgs: [1]);
     } else {
       result = await db.rawQuery(
-          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.mine = ?',
+          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.mine = ? order by char.type, char.name',
           [groupNumber, 1]);
     }
 

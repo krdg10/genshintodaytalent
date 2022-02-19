@@ -186,19 +186,11 @@ class _ProfilePageState extends State<ProfilePage> {
 }
 
 /*
-estruturar o "design" do profile. pelo menos botar todas as infos na tela pra ver como fica.
-
-
-
-// https://flutterhq.com/questions-and-answers/647/change-local-timezone-in-dart
 mine funcionando já... só tem que fazer att quando volta pra dashboard e tiver no mine
 
+> colocar pra imagem expandir on tap. location e tal. 
+> pedir aprovação
 
-> procurar widget. estudar cookbook e tal
-> profile page foco
-> diminuir switch do main, deixar alinhado horizontal
-> ver se tem algo melhor pra fazer com a estrela... alguma legenda sla
-> depois disso, colocar os talentos na tela. location, nome, icone e dias da semana.
-> Talvez priorizar por tudo na tela e depois isso de alinhamento... vamos ver. Tem o design de algumas coisas (profile, drewer, pagina do drewer, footer)
-> Ai depois vejo isso. mas de forma menos enrolada espero
+> Procurar por isso de expandir a imagem. E ver se tem algo que posso melhorar no design. Por ultimo e talvez outra versão, negócio de mudar o mine na hora de voltar.
+
  */

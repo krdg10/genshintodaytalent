@@ -105,12 +105,24 @@ class _DashboardState extends State<Dashboard> {
             ),
             ListGrid(
               listOfCharsOrWeapons: _characterDao.findToday(dropdownValue),
+              height: 400,
             ),
           ],
         ),
       ),
       bottomSheet: Container(
-        height: 97,
+        child: Container(
+          height: 50,
+          child: Padding(
+            padding: const EdgeInsets.only(bottom: 30),
+            child: Center(
+              child: Text(
+                "Dates according to the America server.",
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }
