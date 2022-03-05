@@ -88,6 +88,70 @@ flutter:
     - Banner_Albedo.png
     - Beidou.png
     - Banner_Beidou.png
+    - Tartaglia.png
+    - Banner_Tartaglia.png
+    - Diluc.png
+    - Banner_Diluc.png
+    - Fischl.png
+    - Banner_Fischl.png
+    - Jean.png
+    - Banner_Jean.png
+    - Mona.png
+    - Banner_Mona.png
+    - Shenhe.png
+    - Banner_Shenhe.png
+    - Sucrose.png
+    - Banner_Sucrose.png
+    - Yae_Miko.png
+    - Banner_Yae_Miko.png
+    - Yoimiya.png
+    - Banner_Yoimiya.png
+    - Traveler_Electro.png
+    - Banner_Traveler_Electro.png
+    - Gorou.png
+    - Banner_Gorou.png
+    - Kaeya.png
+    - Banner_Kaeya.png
+    - Keqing.png
+    - Banner_Keqing.png
+    - Klee.png
+    - Banner_Klee.png
+    - Kujou_Sara.png
+    - Banner_Kujou_Sara.png
+    - Ningguang.png
+    - Banner_Ningguang.png
+    - Noelle.png
+    - Banner_Noelle.png
+    - Razor.png
+    - Banner_Razor.png
+    - Rosaria.png
+    - Banner_Rosaria.png
+    - Sayu.png
+    - Banner_Sayu.png
+    - Thoma.png
+    - Banner_Thoma.png
+    - Yanfei.png
+    - Banner_Yanfei.png
+    - Yun_Jin.png
+    - Banner_Yun_Jin.png
+    - Aloy.png
+    - Banner_Aloy.png
+    - Barbara.png
+    - Banner_Barbara.png
+    - Chongyun.png
+    - Banner_Chongyun.png
+    - Traveler_Geo.png
+    - Banner_Traveler_Geo.png
+    - Qiqi.png
+    - Banner_Qiqi.png
+    - Amber.png
+    - Banner_Amber.png
+    - Traveler_Anemo.png
+    - Banner_Traveler_Anemo.png
+    - Lisa.png
+    - Banner_Lisa.png
+    - Xinyan.png
+    - Banner_Xinyan.png
     - Prototype_Amber.png
     - Prototype_Amber_Banner.png
     - Luxurious_Sea-Lord.png
