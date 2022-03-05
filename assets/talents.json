@@ -94,5 +94,53 @@
         "periodGroup": 1,
         "photo": "images/Talent_Prosperity.jpeg",
         "location": "images/Location_Talent_Taishan_Mansion.jpg"
+    },
+    {
+        "id": 12,
+        "name": "Boreal Wolf's Nostalgia",
+        "description": "Weapon Ascension Material. The Wolf King, believing itself to despise humans, thought itself unable to envision a happy life for humanity, making it unworthy of becoming the Lord of the Winds of the world. Therefore, it chose to disappear. Yet, in truth, it gazed on the ones the world abandoned ever so gently.",
+        "periodGroup": 2,
+        "photo": "images/Boreal_Wolfs_Nostalgia.png",
+        "location": "images/Location_Submerged_Valley.jpg"
+    },
+    {
+        "id": 13,
+        "name": "Divine Body From Guyun Location",
+        "description": "Weapon Ascension Material. That which lurks within and animates this relic are the divine remains of lamenting gods. They are unrealized ideals, designs for a prosperous humanity that could never be. They may now lie deep within stone adn sea, but they will not go quietly into the night.",
+        "periodGroup": 1,
+        "photo": "images/Divine_Body_From_Guyun_Location.png",
+        "location": "images/Mist_Veiled_Primo_Elixir_Location.jpg"
+    },
+    {
+        "id": 14,
+        "name": "Golden Branch Of a Distant Sea",
+        "description": "Weapon Ascension Material. The meaning that lies behind the name Watatsumi is simply the unrequited hopes that the abandoned people who dwelt in the deep sea pinned upon the serpent god that led them. And it was also because the serpent god now had people who worshiped it that it stayed in the world it should have long fled, breaking off the coral branches that adorned its body, treading upon land where it should not have, and facing a foe it could never hope to match - till at last, its divine form was sundered along with the mountains, its ichor turned into plasma, and its will and power became a curse that could never be extinguished: Tatarigami.",
+        "periodGroup": 1,
+        "photo": "images/Golden_Branch_Of_a_Distant_Sea.png",
+        "location": "images/Location_Sand_Burial.jpg"
+    },
+    {
+        "id": 15,
+        "name": "Narukami's Valor",
+        "description": "Weapon Ascension Material. The treasure of the lord of thunder is her majesty, and that majesty is embodied in her valor and wrath. Her wrath comes from the love that persists in her heart, and her valor supports that anger. Thus whomsoever should block the path towards eternity or lay a finger on Inazuma's people shall become her foe. They say that there were four great spirits, three divine foxes, and two great swords - but that the symbol of Her Excellency, the Almighty Narukami Ogosho, could only be a single strike, unsurpassed and brilliant as a meteor.",
+        "periodGroup": 2,
+        "photo": "images/Narukamis_Valor.png",
+        "location": "images/Location_Sand_Burial.jpg"
+    },
+    {
+        "id": 16,
+        "name": "Mask Of The Kijin",
+        "description": "Weapon Ascension Material. Chiyo, a warrior of the oni tribe with the Electro Mitsudomoe emblem emblazoned on her back, was once swallowed whole by a beast from beyond this world that had tiger's body and a serpent's tail while holding back the forces of darkness. At last, she tore the creature's innards apart from within, breaking free. This is the origin of the phrase Chiyo the Tiger-Bite, and would be changed over many years to Torachiyo. But within the belly of the beast, she was stained by a deep sin and saw her comrades ripped to shreds by those blood-red teeth. Steeped in the darkness as far as the eye could see, she would eventually draw her sword upon the almighty Narukami Ogosho. Her sword-arm and one horn would be cloven, and she would flee from the city into the forest like a wounded beast. There, they say that she was taken for some unkown monster and slain by the tengu, or perhaps by the Shuumastuban - or perhaps by a scion of the Iwakura Clan training deep in the mountainsm for her features had been twisted by hatred and the agony of her wounds. Or perhaps she even met the oni-masked, sword-bearing doll near the corpse of the giant serpent, and there ended her life's journey. Few among those who fought against the abyss in those days were spared pitch-dark dreams. Those who slew monsters and then became them were hardly the minority. The border between worlds grows fragile, and corruption of this kind is perhaps not merely monodirectional.",
+        "periodGroup": 3,
+        "photo": "images/Mask_Of_The_Kijin.png",
+        "location": "images/Location_Sand_Burial.jpg"
+    },
+    {
+        "id": 17,
+        "name": "Dream Of The Dandelion Gladiator",
+        "description": "Weapon Ascension Material. Vennessa was freed from her slavery, but that which constrained her only grew greater - from her tribesmen to all of Mondstadt, and even to the concept of freedom itself, extending to the whole world. What she really hoped for, in truth, was that the world might grow stronger.",
+        "periodGroup": 3,
+        "photo": "images/Dream_Of_The_Dandelion_Gladiator.png",
+        "location": "images/Location_Submerged_Valley.jpg"
     }
 ]
