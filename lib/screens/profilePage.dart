@@ -16,6 +16,8 @@ class ProfilePage extends StatefulWidget {
 }
 
 class _ProfilePageState extends State<ProfilePage> {
+  final _transformationController = TransformationController();
+  TapDownDetails? _doubleTapDetails;
   @override
   Widget build(BuildContext context) {
     final _talentDao = TalentDao();
@@ -154,8 +156,19 @@ class _ProfilePageState extends State<ProfilePage> {
                             ),
                             Padding(
                               padding: const EdgeInsets.only(bottom: 16),
-                              child: Container(
-                                child: Image.asset(talent.location),
+                              child: GestureDetector(
+                                onDoubleTapDown: _handleDoubleTapDown,
+                                onDoubleTap: _handleDoubleTap,
+                                child: InteractiveViewer(
+                                  boundaryMargin: const EdgeInsets.all(20.0),
+                                  transformationController:
+                                      _transformationController,
+                                  minScale: 0.1,
+                                  maxScale: 2,
+                                  child: Container(
+                                    child: Image.asset(talent.location),
+                                  ),
+                                ),
                               ),
                             )
                           ],
@@ -183,4 +196,49 @@ class _ProfilePageState extends State<ProfilePage> {
     }
     return 1;
   }
+
+  void _handleDoubleTapDown(TapDownDetails details) {
+    _doubleTapDetails = details;
+  }
+
+  void _handleDoubleTap() {
+    if (_transformationController.value != Matrix4.identity()) {
+      _transformationController.value = Matrix4.identity();
+    } else {
+      final position = _doubleTapDetails!.localPosition;
+      // For a 3x zoom
+      _transformationController.value = Matrix4.identity()
+        ..translate(-position.dx * 2, -position.dy * 2)
+        ..scale(3.0);
+      // Fox a 2x zoom
+      // ..translate(-position.dx, -position.dy)
+      // ..scale(2.0);
+    }
+  }
 }
+
+/*
+mine funcionando já... só tem que fazer att quando volta pra dashboard e tiver no mine
+
+> colocar pra imagem expandir on tap. location e tal. 
+> pedir aprovação
+> fazer inserções
+> ver o que posso melhorar no codigo. tem uma anotação no DAO que posso ver
+
+fiz os negocios de design que pensei e ordenação... so penso no negocio de on tap e popular banco mas agr preguis
+
+> Procurar por isso de expandir a imagem. E ver se tem algo que posso melhorar no design. 
+Por ultimo e talvez outra versão, negócio de atualizar a lista com o novo mine na hora de voltar.
+
+
+coloquei negocio do zoom.
+https://stackoverflow.com/questions/65408346/flutter-enable-image-zoom-in-out-on-double-tap-using-interactiveviewer
+https://stackoverflow.com/questions/43651708/how-do-i-pan-and-zoom-an-image
+principais aqui em cima
+https://medium.com/@januar.aransyah/popup-image-full-screen-in-flutter-31144c4f5b50
+https://www.youtube.com/watch?v=44mPHuqPgTU
+
+proximo passo pra uma proxima versão: internazionalização
+agora terminar de por BD, ver sobre design, ver como publicar (e por icone e essas coisas)
+E ai versão 2... internocionalização
+ */

@@ -11,7 +11,7 @@ import 'package:sqflite/sqflite.dart';
 import 'dao/period_dao.dart';
 
 Future<Database> getDatabase() async {
-  final String path = join(await getDatabasesPath(), 'quarentadois.db');
+  final String path = join(await getDatabasesPath(), 'genshintodaydatabase.db');
   return openDatabase(
     path,
     onCreate: (db, version) async {
