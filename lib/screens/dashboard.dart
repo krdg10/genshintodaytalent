@@ -12,8 +12,10 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   final CharacterDao _characterDao = CharacterDao();
-  String dropdownValue = 'Characters';
-
+  String dropdownValue = 'Characters - Today';
+  final snackBar = SnackBar(
+    content: const Text('Dates According to America Server.'),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -84,16 +86,17 @@ class _DashboardState extends State<Dashboard> {
                   setState(() {
                     dropdownValue = newValue!;
                   });
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
                 },
                 items: <String>[
-                  'Characters',
-                  'Weapons',
-                  'All',
-                  'Mine Characters',
-                  'Mine Weapons',
-                  'All Mine',
-                  'Tomorrow Characters',
-                  'Tomorrow Weapons'
+                  'Characters - Today',
+                  'Weapons - Today',
+                  'All - Today',
+                  'My Characters - Today',
+                  'My Weapons - Today',
+                  'My Characters and Weapons - Today',
+                  'Characters - Tomorrow',
+                  'Weapons - Tomorrow'
                 ].map<DropdownMenuItem<String>>((String value) {
                   return DropdownMenuItem<String>(
                     value: value,
@@ -104,23 +107,9 @@ class _DashboardState extends State<Dashboard> {
             ),
             ListGrid(
               listOfCharsOrWeapons: _characterDao.findToday(dropdownValue),
-              height: 500,
+              height: 503,
             ),
           ],
-        ),
-      ),
-      bottomSheet: Container(
-        child: Container(
-          height: 50,
-          child: Padding(
-            padding: const EdgeInsets.only(bottom: 15),
-            child: Center(
-              child: Text(
-                "Dates according to the America server.",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
-              ),
-            ),
-          ),
         ),
       ),
     );

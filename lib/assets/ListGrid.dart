@@ -43,7 +43,7 @@ class ListGrid extends StatelessWidget {
                       padding: const EdgeInsets.only(top: 80),
                       child: Center(
                         child: Text(
-                          "This category don't have elements.",
+                          "This category doesn't have elements.",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 24),
                         ),

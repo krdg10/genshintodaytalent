@@ -51,26 +51,26 @@ class CharacterDao {
     var result;
     final Database db = await getDatabase();
 
-    if (dropdownValue == 'Characters') {
+    if (dropdownValue == 'Characters - Today') {
       result = await queryWhenDropdownOnlyCharactersorWeapons(date, db, 'char');
-    } else if (dropdownValue == 'Weapons') {
+    } else if (dropdownValue == 'Weapons - Today') {
       result =
           await queryWhenDropdownOnlyCharactersorWeapons(date, db, 'weapon');
-    } else if (dropdownValue == 'All') {
+    } else if (dropdownValue == 'All - Today') {
       result = await queryWhenDropdownAllCharactersAndWeaponsToday(date, db);
-    } else if (dropdownValue == 'Mine Characters') {
+    } else if (dropdownValue == 'My Characters - Today') {
       result =
           await queryWhenDropdownOnlyMineCharactersorWeapons(date, db, 'char');
-    } else if (dropdownValue == 'Mine Weapons') {
+    } else if (dropdownValue == 'My Weapons - Today') {
       result = await queryWhenDropdownOnlyMineCharactersorWeapons(
           date, db, 'weapon');
-    } else if (dropdownValue == 'All Mine') {
+    } else if (dropdownValue == 'My Characters and Weapons - Today') {
       result = await queryWhenDropdownAllMineCharactersAndWeapons(date, db);
-    } else if (dropdownValue == 'Tomorrow Characters') {
+    } else if (dropdownValue == 'Characters - Tomorrow') {
       var tomorrow = date.add(const Duration(days: 1));
       result =
           await queryWhenDropdownOnlyCharactersorWeapons(tomorrow, db, 'char');
-    } else if (dropdownValue == 'Tomorrow Weapons') {
+    } else if (dropdownValue == 'Weapons - Tomorrow') {
       var tomorrow = date.add(const Duration(days: 1));
       result = await queryWhenDropdownOnlyCharactersorWeapons(
           tomorrow, db, 'weapon');
