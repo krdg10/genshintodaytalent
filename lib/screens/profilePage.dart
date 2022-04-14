@@ -213,22 +213,3 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 }
-
-/**** proximo passo fazer internacionalização
- * 
- * 
- * https://docs.flutter.dev/deployment/android
- * https://dev.to/felipemsfg/publicacao-automatica-de-um-app-flutter-na-playstore-com-github-actions-i4b
- * https://pub.dev/packages/flutter_launcher_icons
- * https://stackoverflow.com/questions/43928702/how-to-change-the-application-launcher-icon-on-flutter
- * https://developer.android.com/studio/build/multidex#multidexkeepfile-property
- * https://developer.android.com/studio/build/multidex
- * 
- * 
- * 
- * publicar na playstore
- * ler sobre multiplex (manual)
- * ler sobre sincronização automatica (primeiro link, ja que ja passei do primeiro passo)
- *  * testar build com appbundle
- * ou deixar pra publicar depois de ler... n sei. talvez seja mais util ver a melhor forma, seja sync automatica ou appbundle
- */
