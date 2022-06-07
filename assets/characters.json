@@ -1978,5 +1978,49 @@
     "type": "char",
     "stars": 5,
     "mine": 0
+  },
+  {
+    "id": 180,
+    "name": "Yelan",
+    "description": "Yelan is a playable Hydro character in Genshin Impact. She is a mysterious person who claims to work for the Ministry of Civil Affairs. However, she is actually the head of the Yanshang Teahouse.",
+    "talentID": 11,
+    "photo": "images/Yelan.png",
+    "banner": "images/Yelan_Banner.png",
+    "type": "char",
+    "stars": 5,
+    "mine": 0
+  },
+  {
+    "id": 181,
+    "name": "Kuki Shinobu",
+    "description": "Kuki Shinobu is a playable Electro character in Genshin Impact. She is the sidekick of Arataki Itto and Deputy Leader of the Arataki Gang.",
+    "talentID": 9,
+    "photo": "images/Kuki_Shinobu.jpg",
+    "banner": "images/Banner_Kuki_Shinobu.png",
+    "type": "char",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 182,
+    "name": "Fading Twilight",
+    "description": "A precious bow made of platinum, inlaid with an orb that shimmers with the light of eventide.",
+    "talentID": 8,
+    "photo": "images/Fading_Twilight.png",
+    "banner": "images/Banner_Fading_Twilight.png",
+    "type": "weapon",
+    "stars": 4,
+    "mine": 0
+  },
+  {
+    "id": 183,
+    "name": "Aqua Simulacra",
+    "description": "This longbow's color is unpredictable. Under the light, it takes on a lustrous, watery blue.",
+    "talentID": 13,
+    "photo": "images/Aqua_Simulacra.png",
+    "banner": "images/Banner_Aqua_Simulacra.png",
+    "type": "weapon",
+    "stars": 5,
+    "mine": 0
   }
 ]
