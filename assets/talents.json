@@ -142,5 +142,53 @@
         "periodGroup": 3,
         "photo": "images/Dream_Of_The_Dandelion_Gladiator.png",
         "location": "images/Location_Submerged_Valley.jpg"
+    },
+    {
+        "id": 18,
+        "name": "Philosophies Of Ingenuity",
+        "description": "Talent Level-Up material. Ingenuity is the leaf-veins of the nation of wisdom. Ingenuity is completed by harmonious conduct. What is done completes what is thought. Wisdom blooms where the mind, words, and practice converge.",
+        "periodGroup": 2,
+        "photo": "images/Philosophie_Of_Ingenuity.png",
+        "location": "images/Lower_Ground_Of_Chatrakam_Cave_Area.jpg"
+    },
+    {
+        "id": 19,
+        "name": "Philosophies Of Admonition",
+        "description": "Talent Level-Up material. Admonition is the branches of the nation of wisdom. Admonition is completed by good deeds. What is done confers real meaning upon what is said. When one’s mind, words, and deeds are aligned, their nourishment shall guarantee the fruition of wisdom’s tree.",
+        "periodGroup": 1,
+        "photo": "images/Philosophies_Of_Admonition.png",
+        "location": "images/Lower_Ground_Of_Chatrakam_Cave_Area.jpg"
+    },
+    {
+        "id": 20,
+        "name": "Philosophies Of Praxis",
+        "description": "Talent Level-Up material. Praxes are the roots of the nation of wisdom. Praxes bring forth the fruit of wisdom. Practice grants itself meaning, and it is only by treading a path that unites action, speech, and thought that the wise may reach perfection.",
+        "periodGroup": 3,
+        "photo": "images/Philosophies_Of_Praxis.png",
+        "location": "images/Lower_Ground_Of_Chatrakam_Cave_Area.jpg"
+    },
+    {
+        "id": 21,
+        "name": "Golden Talisman of the Forest Dew",
+        "description": "Weapon Level-Up material. 'Mortals hold dear three things only: the spring water that embraces the moonlight, verdant life, and ageless youth...' The nature of 'wisdom' is not domination over all minds or scheming to gain all the benefit. Instead, it is about empowering even ordinary beings to one day overcome their imposed constraints. Though the roar of the tiger is no longer heard in the forest and the resilient guardians would seclude themselves within the dreams of children... On the night when every secret golden seal is lifted and all dreams glow like amber in the moonlight, perhaps she and her beloved people will eventually win genuine freedom.",
+        "periodGroup": 1,
+        "photo": "images/Golden_Talisman_of_the_Forest_Dew.png",
+        "location": "images/Tower_Of_Abject_Pride.jpg"
+    },
+    {
+        "id": 22,
+        "name": "Oasis Garden’s Truth",
+        "description": "Weapon Level-Up material. 'Who would worship a departed god?' The Lord of Flowers was once in alliance with two other gods. Apart from wisdom and power, she also brought mercy and joy to her people. Just as the earth needs more than the burning sunshine and pouring rain, to the people of the Lord of Flowers, joy and love, singing and music, and wine and extravagance were just as vital as strength and sensibility. It is said that flowers blossom so that they may enjoy a spectacular death, and that death was precisely the wholehearted pursuit of the Lord of Flowers — for death adds bitterness to lost joy, and intensifies with time across endless memories. The ignorant Lord of Deserts was never aware of her reasoning. He only reveled in her immense charm and grace — and as misguided as such fervent affections might be, they were well within the calculations of the Lord of Flowers.",
+        "periodGroup": 2,
+        "photo": "images/Oasis_Garden’s_Truth.png",
+        "location": "images/Tower_Of_Abject_Pride.jpg"
+    },
+    {
+        "id": 23,
+        "name": "Olden Days of Scorching Might",
+        "description": "Weapon Level-Up material. In the era when the ignorant Lord of Deserts ruled, his power descended upon every inch of the land like the scorching sun. Ancient stone tablets record that he turned his power into seven rays of blinding light or seven pillars, which he granted equally and mercifully to everyone. No one was neglected, nor was anyone discontented. That was a forgotten golden era, an era when the Lord of Flowers had faded into the sands and the Lord of Verdure was determined to leave. Only the descendants in the yellow sand chose to follow their god. Even as the grim shadow of calamity loomed, the power in which they had faith shone brightly like amber and gold. Yet calamity befell nonetheless, and the golden insectoid insignias were buried beneath the depths of shrine and palace, under collapsed pillars engraved with images of eagles and bulls.",
+        "periodGroup": 3,
+        "photo": "images/Olden_Days_of_Scorching_Might.png",
+        "location": "images/Tower_Of_Abject_Pride.jpg"
     }
 ]
