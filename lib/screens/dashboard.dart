@@ -107,7 +107,8 @@ class _DashboardState extends State<Dashboard> {
             ),
             ListGrid(
               listOfCharsOrWeapons: _characterDao.findToday(dropdownValue),
-              height: 503,
+              height: (MediaQuery.of(context).size.height - 60 - 40 - 2 - 78)
+                  .toInt(),
             ),
           ],
         ),
