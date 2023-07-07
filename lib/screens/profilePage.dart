@@ -213,3 +213,27 @@ class _ProfilePageState extends State<ProfilePage> {
     }
   }
 }
+/**** proximo passo fazer internacionalização
+ * 
+ * 
+ * https://docs.flutter.dev/deployment/android
+ * https://dev.to/felipemsfg/publicacao-automatica-de-um-app-flutter-na-playstore-com-github-actions-i4b
+ * https://pub.dev/packages/flutter_launcher_icons
+ * https://stackoverflow.com/questions/43928702/how-to-change-the-application-launcher-icon-on-flutter
+ * https://developer.android.com/studio/build/multidex#multidexkeepfile-property
+ * https://developer.android.com/studio/build/multidex
+ * https://developer.android.com/studio/publish/app-signing#enroll
+ * https://play.google.com/console/signup
+ * https://www.youtube.com/watch?v=-Eypr9DDp20
+ * 
+ * 
+ * publicar na playstore
+ * ler sobre multiplex (manual)
+ * ler sobre sincronização automatica (primeiro link, ja que ja passei do primeiro passo)
+ * video ali explica como publicar.
+ * foda é os 25 dol. Eu já fiz todas as etapas, gerei o appbundle, só falta a burocracia de publicar na app store mesmo. mas isso é manual, 
+ * é basicamente preencher um formulario, fazer o upload manual. E se pa fazer a publicação automática DEPOIS da primeira publicação.
+ * Mas a primeira é chegar la, preencher manual e depois clicar em upload e selecionar o arquivo. bem de boa. foda. 
+ * tem a fita do documento tbm que me causa temor... fora isso... de boa.
+ * 
+ */
