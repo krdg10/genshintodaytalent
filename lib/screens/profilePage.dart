@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:genshintodaytalent/database/dao/character_dao.dart';
 import 'package:genshintodaytalent/database/dao/talent_dao.dart';
@@ -7,8 +6,10 @@ import 'package:genshintodaytalent/models/character.dart';
 import 'package:genshintodaytalent/models/period.dart';
 import 'package:genshintodaytalent/models/talent.dart';
 
+import 'listPage.dart';
+
 class ProfilePage extends StatefulWidget {
-  Character character;
+  final Character character;
   ProfilePage({Key? key, required this.character}) : super(key: key);
 
   @override
@@ -55,6 +56,7 @@ class _ProfilePageState extends State<ProfilePage> {
                   Talent talent = list[0];
                   Period period = list[1];
                   String descriptionDays = period.descriptionDays;
+                  String periodGroup = period.group.toString();
                   mine = convertIntToBool(widget.character.mine);
                   final snackBar = SnackBar(
                     content: const Text('Changes saved with success.'),
@@ -114,32 +116,58 @@ class _ProfilePageState extends State<ProfilePage> {
                       ListTile(
                         title: Column(
                           children: [
-                            Row(
-                              children: [
-                                Padding(
-                                  padding: const EdgeInsets.only(right: 8),
-                                  child: Container(
-                                    height: 50,
-                                    child: Image.asset(talent.photo),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => ListPage(
+                                      talent: talent.name,
+                                    ),
                                   ),
-                                ),
-                                Text(
-                                  talent.name,
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                ),
-                              ],
-                            ),
-                            Padding(
-                              padding: const EdgeInsets.only(top: 8),
+                                );
+                              },
                               child: Row(
                                 children: [
+                                  Padding(
+                                    padding: const EdgeInsets.only(right: 8),
+                                    child: Container(
+                                      height: 50,
+                                      child: Image.asset(talent.photo),
+                                    ),
+                                  ),
                                   Text(
-                                    'Days of week: ',
+                                    talent.name,
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold),
                                   ),
-                                  Text(descriptionDays),
                                 ],
+                              ),
+                            ),
+                            InkWell(
+                              onTap: () {
+                                Navigator.pop(context);
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                    builder: (context) => ListPage(
+                                      group: periodGroup,
+                                      type: widget.character.type,
+                                    ),
+                                  ),
+                                );
+                              },
+                              child: Padding(
+                                padding: const EdgeInsets.only(top: 8),
+                                child: Row(
+                                  children: [
+                                    Text(
+                                      'Days of week: ',
+                                      style: TextStyle(
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Text(descriptionDays),
+                                  ],
+                                ),
                               ),
                             ),
                             Padding(

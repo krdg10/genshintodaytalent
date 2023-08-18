@@ -27,6 +27,36 @@ class TalentDao {
     return talents;
   }
 
+  Future<List<String>> findAllTalentsNames() async {
+    /*List<String> namelist = [];
+
+    await findAll().then((listOfTalents) {
+      
+      listOfTalents.map((talent) {
+        print(talent);
+        namelist.add(talent.name);
+        print(talent.name);
+      });
+    });
+  
+
+    return namelist;
+    
+    meu código era esse acima mas pedi pro chatgpt corrigir e veio o abaixo. o then era o problema. mas zoado que ontem tava dando certo...
+    eu acho pelo menos. e nem lembro de ter feito outra versão que eu otimizei ou sla
+    */
+
+    List<String> namelist = [];
+
+    List<Talent> listOfTalents = await findAll();
+
+    for (Talent talent in listOfTalents) {
+      namelist.add(talent.name);
+    }
+
+    return namelist;
+  }
+
   Future<dynamic> findOne(int id) async {
     final Database db = await getDatabase();
 

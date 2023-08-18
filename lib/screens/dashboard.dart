@@ -64,6 +64,78 @@ class _DashboardState extends State<Dashboard> {
                 );
               },
             ),
+            ExpansionTile(
+              title: const Text(
+                'Characters per day',
+                style: TextStyle(color: Colors.blue),
+              ),
+              children: [
+                ListTile(
+                  title: const Text(
+                    'Monday and Thursday',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ListPage(
+                          group: '1',
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text(
+                    'Tuesday and Friday',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ListPage(
+                          group: '2',
+                        ),
+                      ),
+                    );
+                  },
+                ),
+                ListTile(
+                  title: const Text(
+                    'Wednesday and Saturday',
+                    style: TextStyle(color: Colors.blue),
+                  ),
+                  onTap: () {
+                    Navigator.pop(context);
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => ListPage(
+                          group: '3',
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ],
+            ),
+            ListTile(
+              title: const Text(
+                'Characters/Weapons per talent',
+                style: TextStyle(color: Colors.blue),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => ListPage(
+                      talent: 'Transience',
+                    ),
+                  ),
+                );
+              },
+            ),
           ],
         ),
       ),

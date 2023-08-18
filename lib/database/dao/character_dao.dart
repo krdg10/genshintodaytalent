@@ -182,6 +182,43 @@ class CharacterDao {
         'UPDATE $_tableName SET $_mine = ? where $_id = ?', [mine, id]);
   }
 
+  Future<List<Character>> queryToFindAllCharactersOrWeaponsByGroup(
+      var type, var groupNumber) async {
+    final Database db = await getDatabase();
+    var result;
+
+    if (type == 'Characters') {
+      type = 'char';
+    } else {
+      type = 'weapon';
+    }
+
+    if (groupNumber == 4) {
+      result = await db.query(_tableName);
+    } else {
+      result = await db.rawQuery(
+          'SELECT char.* from characters as char inner join talents as talent where char.talentID = talent.id and talent.periodGroup = ? and char.type = ? order by char.type, char.name',
+          [groupNumber, '$type']);
+    }
+    Future<List<Character>> characters = _toList(result);
+
+    return characters;
+  }
+
+  Future<List<Character>> queryToFindAllCharactersOrWeaponsByTalent(
+      var talentName) async {
+    final Database db = await getDatabase();
+    var result;
+
+    result = await db.rawQuery(
+        'SELECT char.* FROM characters AS char INNER JOIN talents AS talent ON char.talentID = talent.id WHERE talent.name = ?  ORDER BY char.type, char.name',
+        ['$talentName']);
+// achava que precisaria do valor do talent.id pra comparar e precisava nada... basico isso hein
+    Future<List<Character>> characters = _toList(result);
+
+    return characters;
+  }
+
   Future<List<Character>> _toList(List<Map<String, dynamic>> result) async {
     final List<Character> characters = [];
     for (Map<String, dynamic> row in result) {
