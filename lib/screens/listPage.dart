@@ -18,6 +18,7 @@ class _ListPageState extends State<ListPage> {
   String title = '';
   String dropdownValue = 'Characters';
   int count = 0;
+  String subtitle = '';
   @override
   Widget build(BuildContext context) {
     if (widget.group.length > 0) {
@@ -29,7 +30,14 @@ class _ListPageState extends State<ListPage> {
         }
         count++;
       }
-      title = dropdownValue + ' per day';
+      if (widget.group == '1') {
+        subtitle = 'Monday and Thursday';
+      } else if (widget.group == '2') {
+        subtitle = 'Tuesday and Friday';
+      } else {
+        subtitle = 'Wednesday and Saturday';
+      }
+      title = dropdownValue + ' of ' + subtitle;
     } else if (widget.talent.length > 0) {
       if (widget.talent == 'etc' && count == 0) {
         print('entrou');
