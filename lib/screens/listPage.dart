@@ -19,15 +19,44 @@ class _ListPageState extends State<ListPage> {
   String dropdownValue = 'Characters';
   int count = 0;
   String subtitle = '';
+
+  // Método para atualizar o valor do dropdown
+  void _updateDropdownValue(String? newValue) {
+    if (newValue != null) {
+      setState(() {
+        dropdownValue = newValue;
+      });
+    }
+  }
+
+  // Método para construir o DropdownButton
+  Widget _buildDropdownButton(List<String> items) {
+    return DropdownButton(
+      value: dropdownValue,
+      elevation: 16,
+      style: const TextStyle(color: Colors.blue),
+      underline: Container(
+        height: 2,
+        color: Colors.blueAccent,
+      ),
+      onChanged: _updateDropdownValue,
+      items: items.map<DropdownMenuItem<String>>((String value) {
+        return DropdownMenuItem<String>(
+          value: value,
+          child: Text(value),
+        );
+      }).toList(),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
+    final CharacterDao _characterDao = CharacterDao();
+    final TalentDao _talentDao = TalentDao();
+
     if (widget.group.length > 0) {
       if (widget.type.length > 0 && count == 0) {
-        if (widget.type == 'char') {
-          dropdownValue = 'Characters';
-        } else {
-          dropdownValue = 'Weapons';
-        }
+        dropdownValue = widget.type == 'char' ? 'Characters' : 'Weapons';
         count++;
       }
       if (widget.group == '1') {
@@ -39,24 +68,14 @@ class _ListPageState extends State<ListPage> {
       }
       title = dropdownValue + ' of ' + subtitle;
     } else if (widget.talent.length > 0) {
-      if (widget.talent == 'etc' && count == 0) {
-        print('entrou');
-        dropdownValue = 'Transience';
-      } else if (count == 0) {
-        dropdownValue = widget.talent;
+      if ((widget.talent == 'etc' && count == 0) || count == 0) {
+        dropdownValue = widget.talent == 'etc' ? 'Transience' : widget.talent;
       }
       count++;
       title = dropdownValue;
     } else {
-      if (widget.type == 'char') {
-        title = 'Characters';
-      } else {
-        title = 'Weapons';
-      }
+      title = widget.type == 'char' ? 'Characters' : 'Weapons';
     }
-
-    final CharacterDao _characterDao = CharacterDao();
-    final TalentDao _talentDao = TalentDao();
 
     return Scaffold(
       appBar: AppBar(
@@ -69,27 +88,7 @@ class _ListPageState extends State<ListPage> {
                 children: [
                   Container(
                     child: widget.group.length > 0
-                        ? DropdownButton(
-                            value: dropdownValue,
-                            elevation: 16,
-                            style: const TextStyle(color: Colors.blue),
-                            underline: Container(
-                              height: 2,
-                              color: Colors.blueAccent,
-                            ),
-                            onChanged: (String? newValue) {
-                              setState(() {
-                                dropdownValue = newValue!;
-                              });
-                            },
-                            items: <String>['Characters', 'Weapons']
-                                .map<DropdownMenuItem<String>>((String value) {
-                              return DropdownMenuItem<String>(
-                                value: value,
-                                child: Text(value),
-                              );
-                            }).toList(),
-                          )
+                        ? _buildDropdownButton(['Characters', 'Weapons'])
                         : FutureBuilder<List<String>>(
                             future: _talentDao.findAllTalentsNames(),
                             builder: (context, snapshot) {
@@ -97,28 +96,9 @@ class _ListPageState extends State<ListPage> {
                                   ConnectionState.waiting) {
                                 return CircularProgressIndicator();
                               } else if (snapshot.hasError) {
-                                return Text('Erro ao carregar os itens.');
+                                return Text('Error in loading.');
                               } else if (snapshot.hasData) {
-                                return DropdownButton<String>(
-                                  value: dropdownValue,
-                                  elevation: 16,
-                                  style: const TextStyle(color: Colors.blue),
-                                  underline: Container(
-                                    height: 2,
-                                    color: Colors.blueAccent,
-                                  ),
-                                  onChanged: (String? selectedItem) {
-                                    setState(() {
-                                      dropdownValue = selectedItem!;
-                                    });
-                                  },
-                                  items: snapshot.data!.map((String item) {
-                                    return DropdownMenuItem<String>(
-                                      value: item,
-                                      child: Text(item),
-                                    );
-                                  }).toList(),
-                                );
+                                return _buildDropdownButton(snapshot.data!);
                               } else {
                                 return Text('No item founded');
                               }
